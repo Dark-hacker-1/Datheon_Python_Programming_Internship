@@ -11,11 +11,11 @@ HANGMAN_PICS = [
     "  +---+\n  O   |\n /|\\  |\n / \\  |\n     ==="
 ]
 
-# Word list for the game
-WORD_LIST = ["python", "developer", "internship", "datheon", "automation", "security", "programming", "repository"]
+# Multiple words for the game to pick from randomly
+WORD_LIST = ["PYTHON", "DEVELOPER", "INTERNSHIP", "DATHEON", "AUTOMATION", "SECURITY", "PROGRAMMING", "REPOSITORY"]
 
 def get_random_word(word_list):
-    return random.choice(word_list).upper()
+    return random.choice(word_list)
 
 def display_board(missed_letters, correct_letters, secret_word):
     print(HANGMAN_PICS[len(missed_letters)])
@@ -53,7 +53,9 @@ def play_game():
     print("WELCOME TO HANGMAN - DATHEON INTERNSHIP")
     print("=" * 40)
     
+    # Picks a random word from the list for this game round
     secret_word = get_random_word(WORD_LIST)
+    
     missed_letters = ""
     correct_letters = ""
     game_is_done = False
@@ -90,3 +92,4 @@ if __name__ == "__main__":
         else:
             print("Thank you for playing!")
             break
+            
